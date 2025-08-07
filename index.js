@@ -22,7 +22,7 @@ const drive = google.drive({ version: 'v3', auth: oauth2Client });
 
 const upload = multer({ dest: 'uploads/' });
 
-app.post('/upload', upload.single('file'), async (req, res) => {
+app.post('/api/upload', upload.single('file'), async (req, res) => {
   try {
     const filePath = req.file.path;
     const fileMetadata = {
